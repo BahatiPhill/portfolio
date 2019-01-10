@@ -1,6 +1,6 @@
 environ.sh
 *.pyc
-media/
-static/
+media/*
+static/*
 __pycache__/
 db.sqlite3
