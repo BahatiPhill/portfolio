@@ -1,9 +1,9 @@
 from django.urls import  path
-from blog.views import index, another_one, done
+from blog.views import blog, another_one, done, article_details
 
 urlpatterns = [
-    path('', index, name='blog'),
+    path('', blog, name='blog'),
     path('done/', done, name='done'),
-    #path('<slug:title>/', article_details, name='article-detail'),
+    path('<slug:slug>/', article_details, name='article-details'),
     path('another_one/', another_one, name='another_one'),
 ]
