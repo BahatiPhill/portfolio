@@ -12,7 +12,7 @@ def home(request):
 
 
 def blog(request):
-    entries = BlogArticles.objects.filter(publish=True)
+    entries = BlogArticles.objects.filter(publish=True).order_by('-timestamp')
     return render(request, 'blog.html', {'entries': entries})
 
 def contacts(request):
@@ -26,7 +26,7 @@ def article_details(request, slug):
 
 #@user_passes_test(lambda u: u.is_superuser, login_url='login')
 def DASH(request):
-    articles = BlogArticles.objects.all()
+    articles = BlogArticles.objects.all().order_by('-timestamp')
     return render(request, 'dash.html', {'articles': articles})
 
 
