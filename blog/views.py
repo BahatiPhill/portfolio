@@ -24,10 +24,11 @@ def article_details(request, slug):
     #article = BlogArticles.objects.get(slug=slug)
     return render(request, 'article_details.html', {'article':article})
 
+#@user_passes_test(lambda u: u.is_superuser, login_url='login')
+def DASH(request):
+    articles = BlogArticles.objects.all()
+    return render(request, 'dash.html', {'articles': articles})
 
-class DASH(ListView):
-    model = BlogArticles
-    template_name = 'dash.html'
 
 #@user_passes_test(lambda u: u.is_superuser, login_url='login')
 def another_one(request):
@@ -35,11 +36,17 @@ def another_one(request):
         form = BlogArticlesForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('done')
+            return redirect('dash')
 
     else:
         form = BlogArticlesForm()
     return render(request, 'another_one.html', {'form':form})
 
-def done(request):
-    return render(request, 'done.html', {})
+def edit_article(request, slug=None):
+    article = get_object_or_404(BlogArticles, slug=slug)
+    form = BlogArticlesForm(request.POST or None, instance=article)
+
+    if form.is_valid():
+        form.save()
+        return redirect('dash')
+    return render(request, 'another_one.html', {'form':form})

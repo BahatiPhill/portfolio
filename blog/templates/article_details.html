@@ -15,12 +15,14 @@
                     {{ article.content | safe }}
                 </p>
                 <br>
-                {% if article.tags %} 
+                <!--{% if article.tags %} 
                      <h4>TAGS</h4>
                     {% for tag in article.tags %}
                         <span> {{ tag }} </span> 
                     {% endfor %}
-                {% endif %}
+                {% endif %} -->
+
+                <a href="{% url 'blog' %}"> <img src="{% static 'img/left-arrow.png' %}"> Back </p>
 
         </div>
         <div class="col-lg-2">                                                                  
