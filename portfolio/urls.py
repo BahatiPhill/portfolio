@@ -21,6 +21,7 @@ from django.conf import settings
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', home, name='home'),
     path('blog/', include('blog.urls')),
