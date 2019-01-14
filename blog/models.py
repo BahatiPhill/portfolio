@@ -6,10 +6,10 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class BlogArticles(models.Model):
 
-    title = models.CharField(max_length=20)
+    title = models.CharField(max_length=100)
     content = RichTextUploadingField()
     timestamp = models.DateField(auto_now_add=True)
-    tags = models.CharField(max_length=20)
+    tags = models.CharField(max_length=40)
     slug = models.SlugField(unique=True)
     publish = models.BooleanField(default=False)
 
