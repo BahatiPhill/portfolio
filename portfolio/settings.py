@@ -59,6 +59,7 @@ ROOT_URLCONF = 'portfolio.urls'
 
 #Authentication
 LOGIN_REDIRECT_URL = 'dash/'
+LOGOUT_REDIRECT_URL = '/'
 
 
 

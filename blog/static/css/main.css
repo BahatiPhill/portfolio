@@ -1945,15 +1945,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-light .navbar-toggler {
-  color: #fff;
-  border-color: #fff;
+  color: #000;
+  border-color: #000;
 }
 
 .navbar-nav a {
   text-transform: uppercase;
   font-weight: 500;
   font-size: 12px;
-  color: #fff;
+  color: #000;
   padding: 20px;
 }
 

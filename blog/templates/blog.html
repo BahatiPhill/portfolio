@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start review Area -->
+				<section class="review-area section-gap" id="testimonial">
+					<div class="container">
+						<div class="row d-flex justify-content-center">
+							<div class="menu-content pb-60 col-lg-10">
+								<div class="title text-center">
+									<h1 class="mb-10">Latest Write-Up</h1>
+								</div>
+							</div>
+						</div>							
+						<div class="row">
+							<div class="col-lg-2">
+																							
+							</div>
+
+
+							<!-- content -->
+							<div class="col-lg-8">
+								{% for article in entries %}
+								<div class="single-review">
+									<!-- <img src="img/c2.png" alt=""> -->
+									<div class="title d-flex flex-row">
+										<a href="{% url 'article-details' slug=article.slug %}"><h4>{{ article.title }}</h4></a>									
+										<div class="star">
+											<span class="fa"> {{ article.timestamp }} </span>
+											
+											
+										</div>
+									</div>
+
+									<p>
+										{{ article.content | safe | truncatewords_html:50 }}
+									</p>
+
+								{% endfor %}
+								</div>	
+																						
+							</div>
+							<div class="col-lg-2">
+																							
+							</div>							
+						</div>	
+				</section>
+				<!-- End review Area -->
+
+{% endblock content %}
