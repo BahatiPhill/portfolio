@@ -52,7 +52,7 @@
 body {
   color: #777777;
   font-family: 'Neuton', serif;
-  font-size: 14px;
+  font-size: 21px;
   font-weight: 300;
   line-height: 1.625em;
   position: relative;
@@ -1952,7 +1952,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-nav a {
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 20px;
   color: #000;
   padding: 20px;
 }
