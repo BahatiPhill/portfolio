@@ -9,4 +9,4 @@ class BlogArticlesForm(ModelForm):
 
     class Meta:
         model = BlogArticles
-        fields = ['title', 'content', 'tags', 'publish']
+        fields = ['title','title_image', 'content', 'tags', 'publish']
