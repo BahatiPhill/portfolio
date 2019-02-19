@@ -18,6 +18,7 @@ from django.urls import path, include
 from blog.views import home, contacts, DASH
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic import TemplateView
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
@@ -26,6 +27,9 @@ urlpatterns = [
     path('', home, name='home'),
     path('blog/', include('blog.urls')),
     path('contacts/', contacts, name='contacts'),
+
+    #Robot.txt
+    path('robots.txt/', TemplateView.as_view(template_name="robots.txt", content_type='text/plain')),
 
     #administration
     path('dash/', DASH, name='dash'),
