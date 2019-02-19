@@ -9,18 +9,14 @@
         <div class="col-lg-8">
             
                 <h1>{{ article.title}}</h1> <span>{{ article.timestamp }}</span>
+                <img src="{{MEDIA_URL}}{{article.title_image}}" height="300px" width="500px">	
                 <br>
                 <br>
                 <p>
                     {{ article.content | safe }}
                 </p>
                 <br>
-                <!--{% if article.tags %} 
-                     <h4>TAGS</h4>
-                    {% for tag in article.tags %}
-                        <span> {{ tag }} </span> 
-                    {% endfor %}
-                {% endif %} -->
+                
 
                 <a href="{% url 'blog' %}"> <img src="{% static 'img/left-arrow.png' %}"> Back </p>
 

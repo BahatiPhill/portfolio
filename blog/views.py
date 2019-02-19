@@ -35,7 +35,7 @@ def DASH(request):
 @user_passes_test(lambda u: u.is_superuser, login_url='login')
 def another_one(request):
     if request.method == 'POST':
-        form = BlogArticlesForm(request.POST)
+        form = BlogArticlesForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('dash')
