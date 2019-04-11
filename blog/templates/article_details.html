@@ -2,30 +2,14 @@
 {% load static %}
 
 {% block content %}
-
-<div class="row">
-        <div class="col-lg-2">                                                                  
-        </div>
-        <div class="col-lg-8">
             
                 <h1>{{ article.title}}</h1> <span>{{ article.timestamp }}</span>
-                <img src="{{MEDIA_URL}}{{article.title_image}}" height="300px" width="500px">	
+                <img src="{{MEDIA_URL}}{{article.title_image}}" alt="featured image">	
                 <br>
                 <br>
-                <p>
                     {{ article.content | safe }}
-                </p>
                 <br>
                 
-
-                <a href="{% url 'blog' %}"> <img src="{% static 'img/left-arrow.png' %}"> Back </p>
-
-        </div>
-        <div class="col-lg-2">                                                                  
-        </div>
-</div>
-
-
-
+                <a href="{% url 'blog' %}"> Back </p>
     
 {% endblock content %}

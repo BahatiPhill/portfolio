@@ -1,27 +1,26 @@
-{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Bahati Phill</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+        <header>
+            <div class="banner-content">
+                <h4>From the depths of the Sea</h4>
+                <h1> Let's Explore Ideas!</h1>
+                <a class="first-button" href="{% url 'blog' %}"><strong>Blog</strong></a>
+                <a class="second-button" href="{% url 'contacts' %}"><strong>Contacts</strong></a>
+            </div>
+        </header>
 
-
-{% block content %}
-
-
-<!-- start banner Area -->
-				<section class="banner-area relative" id="home">	
-					<div class="overlay overlay-bg"></div>
-					<div class="container">
-						<div class="row fullscreen d-flex align-items-center justify-content-center">
-							<div class="banner-content col-lg-10">
-								<h5 class="text-uppercase">From The Depths Of The Sea</h5>
-								<h1>
-									Let’s Explore Ideas!				
-								</h1>
-								<a href="{% url 'blog' %}" class="primary-btn text-uppercase" style="font-family: 'Poppins', sans-serif;">Blog</a>
-								<p>&nbsp;</p>
-								<a href="{% url 'contacts' %}" class="primary-btn text-uppercase" style="font-family: 'Poppins', sans-serif;">Contacts</a>
-							</div>											
-						</div>
-					</div>
-				</section>
-<!-- End banner Area -->
-
-{% endblock content %}
+    </body>
+    
+</html>
