@@ -1,6 +1,7 @@
 from django.db import models
 from  django.utils.text import slugify
 from ckeditor_uploader.fields import RichTextUploadingField 
+from django.urls import reverse
 # Create your models here.
 
 
@@ -17,6 +18,9 @@ class BlogArticles(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('article-details', args=[self.slug])
 
     def __str__(self):
         return self.title
