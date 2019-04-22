@@ -22,8 +22,15 @@ def contacts(request):
 
 def article_details(request, slug):
     article = get_object_or_404(BlogArticles, slug=slug)
-    #article = BlogArticles.objects.get(slug=slug)
-    return render(request, 'article_details.html', {'article':article})
+
+    full_path = request.build_absolute_uri() 
+    url = request.get_host()
+    context = {
+        'article':article,
+        'full_path': full_path,
+        'url': url
+    }
+    return render(request, 'article_details.html', context)
 
 @user_passes_test(lambda u: u.is_superuser, login_url='login')
 def DASH(request):

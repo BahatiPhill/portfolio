@@ -11,15 +11,14 @@
 <meta name="twitter:creator" content="@bahatiphill">
 <meta name="twitter:title" content="{{article.title}}">
 <meta name="twitter:description" content="{{ article.content | safe | truncatewords_html:50 }}">
-<meta name="twitter:image" content="{{MEDIA_URL}}{{article.title_image}}">
+<meta name="twitter:image" content="{{url}}/{{MEDIA_URL}}{{article.title_image}}">
 
 <!--OpenGrap tags-->
 <meta property="og:type" content="article" /> 
 <meta property="og:title" content="{{article.title}}" />
 <meta property="og:description" content="{{ article.content | safe | truncatewords_html:50 }}" />
-<meta property="og:image" content="{{MEDIA_URL}}{{article.title_image}}" />
-<meta property="og:url" content="https://bahati.tk/blog/{{article.slug}}" />
-<meta property="og:site_name" content="Bahati Phill" />
+<meta property="og:image" content="{{url}}/{{MEDIA_URL}}{{article.title_image}}" />
+<meta property="og:url" content="{{full_path}}" />
 {% endblock metatags %}
 
 {% block content %}
