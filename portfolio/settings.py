@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'widget_tweaks',
+    'dbbackup',  # django-dbbackup
 ]
 
 MIDDLEWARE = [
@@ -216,4 +217,16 @@ CKEDITOR_CONFIGS = {
             'codesnippet'
         ]),
     }
+}
+
+#BACKUP
+
+#local filesystem
+#DBBACKUP_STORAGE = 'django.core.files.storage.FileSystemStorage'
+#DBBACKUP_STORAGE_OPTIONS = {'location': '/tmp/backup/'}
+
+#DropBox
+DBBACKUP_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
+DBBACKUP_STORAGE_OPTIONS = {
+    'oauth2_access_token': os.environ.get('DROPBOX_ACCESS_TOKEN'),
 }
