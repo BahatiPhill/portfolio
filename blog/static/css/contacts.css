@@ -1,0 +1,37 @@
+
+body {
+    margin: 0 auto;
+    max-width: 10em;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    line-height: 1.5;
+    padding: 4em 1em;
+    color: #566b78;
+}
+
+
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    background-color: #0d69be;
+    border: 1px solid #0d69be;
+    color: #fff;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.centering {
+    text-align: center;
+    display: inline-block;
+}
+
+.img {
+    display: inline-block;
+    height: 90px;
+    vertical-align: top;
+    width: 90px;
+}

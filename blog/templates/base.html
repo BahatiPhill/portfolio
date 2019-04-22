@@ -2,7 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+        <!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Blog | Bahati Phill</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
     <body>
 				{% block content %}

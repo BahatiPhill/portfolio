@@ -1,24 +1,31 @@
-{% extends "base.html" %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>Contacts | Bahati Phill</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/contacts.css' %}">
+    </head>
+    <body>
 
-{% block content %}
-
-<h1>Find me on </h1>
-                <br>           
-                <h4> Twitter</h4>
-                <a href="https://twitter.com/BahatiPhill"> <img src="{% static 'img/twitter.png' %}" style="width:10; height:10;" > </a>
+                <br>
+                <div class="centering">           
+                <a href="https://twitter.com/BahatiPhill"> <img class="img" src="{% static 'img/twitter.png' %}" > </a>
                 <p>&nbsp;</p>
                 
                
-                <h4> Github</h4>
-                <a href="https://github.com/BahatiPhill"><img style="width:10; height:10;" src="{% static 'img/github.png' %}" ></a>
+                <a href="https://github.com/BahatiPhill"><img class="img"  src="{% static 'img/github.png' %}" ></a>
                 <p>&nbsp;</p>                                        
                    
-                <h4> E-mail</h4>
-                <a href="mailto:bahatiphill@gmail.com"><img src="{% static 'img/email.png' %}" style="width:10; height:10;" ></a>
-                <p>&nbsp;</p>                        
+                <a href="mailto:bahatiphill@gmail.com"><img class="img" src="{% static 'img/email.png' %}" ></a>
+                <p>&nbsp;</p>             
                 
             <br>
-                <a href="{% url 'home' %}">Back Home </a>
+                <a class="btn" href="{% url 'home' %}">Back Home </a>
 
-{% endblock content %}
+            </div>
