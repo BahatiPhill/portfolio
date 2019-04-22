@@ -1,17 +1,13 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Mobile Specific Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<!-- Favicon-->
-		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
-		<meta charset="UTF-8">
-		<!-- Site Title -->
+
+{% block metatags %}
+        <!-- Site Title -->
 		<title>Bahati Phill</title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-    </head>
-    <body>
+		{% endblock metatags %}
+
+        {% block content %}
         <header>
             <div class="banner-content">
                 <h4>From the depths of the Sea</h4>
@@ -20,7 +16,4 @@
                 <a class="second-button" href="{% url 'contacts' %}"><strong>Contacts</strong></a>
             </div>
         </header>
-
-    </body>
-    
-</html>
+        {% endblock content %}

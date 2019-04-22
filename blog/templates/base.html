@@ -7,9 +7,9 @@
 		<!-- Favicon-->
 		<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
 		<meta charset="UTF-8">
-		<!-- Site Title -->
-		<title>Blog | Bahati Phill</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+		{% block metatags %}
+		{% endblock metatags %}
     </head>
     <body>
 				{% block content %}

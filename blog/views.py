@@ -6,7 +6,6 @@ from django.shortcuts import get_object_or_404
 
 from django.contrib.auth.decorators import user_passes_test
 
-# Create your views here.
 
 
 def home(request):
@@ -28,6 +27,7 @@ def article_details(request, slug):
 
 @user_passes_test(lambda u: u.is_superuser, login_url='login')
 def DASH(request):
+
     articles = BlogArticles.objects.all().order_by('-timestamp')
     return render(request, 'dash.html', {'articles': articles})
 

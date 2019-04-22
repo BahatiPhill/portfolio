@@ -1,6 +1,27 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block metatags %}
+<!-- Site Title -->
+<title>{{article.title}}</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
+
+<!--Twitter cards-->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@bahatiphill">
+<meta name="twitter:title" content="{{article.title}}">
+<meta name="twitter:description" content="{{ article.content | safe | truncatewords_html:50 }}">
+<meta name="twitter:image" content="{{MEDIA_URL}}{{article.title_image}}">
+
+<!--OpenGrap tags-->
+<meta property="og:type" content="article" /> 
+<meta property="og:title" content="{{article.title}}" />
+<meta property="og:description" content="{{ article.content | safe | truncatewords_html:50 }}" />
+<meta property="og:image" content="{{MEDIA_URL}}{{article.title_image}}" />
+<meta property="og:url" content="https://bahati.tk/blog/{{article.slug}}" />
+<meta property="og:site_name" content="Bahati Phill" />
+{% endblock metatags %}
+
 {% block content %}
             
                 <h1>{{ article.title}}</h1> <span>{{ article.timestamp }}</span>
