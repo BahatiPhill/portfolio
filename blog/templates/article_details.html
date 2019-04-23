@@ -10,15 +10,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@bahatiphill">
 <meta name="twitter:title" content="{{article.title}}">
-<meta name="twitter:description" content="{{ article.content | truncatechars:40 }}">
-<meta name="twitter:image" content="https://{{url}}{{MEDIA_URL}}{{article.title_image}}">
+<meta name="twitter:description" content="{{ article.content | striptags | truncatechars:40 }}">
+<meta name="twitter:image" content="https://bahati.tk{{MEDIA_URL}}{{article.title_image}}">
 
 <!--OpenGrap tags-->
 <meta property="og:type" content="article" /> 
 <meta property="og:title" content="{{article.title}}" />
-<meta property="og:description" content="{{ article.content | truncatechars:50 }}" />
-<meta property="og:image" content="https://{{url}}{{MEDIA_URL}}{{article.title_image}}" />
-<meta property="og:url" content="https://{{url}}/blog/{{article.slug}}/" />
+<meta property="og:description" content="{{ article.content | striptags | truncatechars:40 }}" />
+<meta property="og:image" content="https://bahati.tk{{MEDIA_URL}}{{article.title_image}}" />
+<meta property="og:url" content="https://bahati.tk/blog/{{article.slug}}/" />
 {% endblock metatags %}
 
 {% block content %}
