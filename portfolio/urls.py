@@ -7,6 +7,7 @@ from django.conf import settings
 from django.views.generic import TemplateView
 from django.contrib.sitemaps.views import sitemap
 
+from blog.views import  ArticlesList, ArticlesDetails
 from blog.sitemaps import StaticViewSitemap, BlogSitemap
 
 sitemaps = {
@@ -30,4 +31,9 @@ urlpatterns = [
 
     #administration
     path('dash/', DASH, name='dash'),
+
+    #API
+    path('api/', ArticlesList.as_view()),
+    path('api/<slug:slug>/', ArticlesDetails.as_view()),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect
 from blog.models import BlogArticles
 from blog.forms import BlogArticlesForm
+from blog.serializers import BlogSerializer
 from django.views.generic.list import ListView
 from django.shortcuts import get_object_or_404
+
+from rest_framework import mixins
+from rest_framework import generics
 
 from django.contrib.auth.decorators import user_passes_test
 
@@ -61,3 +65,19 @@ def edit_article(request, slug=None):
         form.save()
         return redirect('dash')
     return render(request, 'another_one.html', {'form':form})
+
+
+
+
+#API
+
+class ArticlesList(generics.ListAPIView):
+    queryset = BlogArticles.objects.filter(publish=True)
+    serializer_class = BlogSerializer
+
+
+class ArticlesDetails(generics.RetrieveAPIView):
+    queryset = BlogArticles.objects.filter(publish=True)
+    serializer_class = BlogSerializer
+    lookup_field = 'slug'
+

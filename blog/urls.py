@@ -6,5 +6,5 @@ urlpatterns = [
     path('article/add/', another_one, name='another_one'),
     path('<slug:slug>/', article_details, name='article-details'),
     path('<slug:slug>/edit/', edit_article, name='article-edit'),
-    
+
 ]

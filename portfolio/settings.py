@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ckeditor_uploader',
     'widget_tweaks',
     'dbbackup',  # django-dbbackup
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
