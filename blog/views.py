@@ -68,9 +68,7 @@ def edit_article(request, slug=None):
 
 
 
-
 #API
-
 class ArticlesList(generics.ListAPIView):
     queryset = BlogArticles.objects.filter(publish=True)
     serializer_class = BlogSerializer
